@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      /* Custom styles for date input to match dark theme */
+      input[type="date"] {
+        color-scheme: dark;
+      }
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(0.8);
+      }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'roboto-mono': ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand-bg': '#0D1117',
+                        'brand-surface': '#161B22',
+                        'brand-border': '#30363D',
+                        'brand-primary': '#F8F8FF',
+                        'brand-secondary': '#C9D1D9',
+                        'brand-accent': '#F778BA',
+                        'brand-success': '#3FB950',
+                        'brand-danger': '#F85149',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(248, 248, 255, 0.4)' },
+                            '50%': { boxShadow: '0 0 30px rgba(248, 248, 255, 0.7)' },
+                        },
+                        logoFlicker: {
+                          '0%, 100%': { opacity: '1', textShadow: '0 0 8px #F8F8FF' },
+                          '50%': { opacity: '0.8', textShadow: '0 0 12px #F778BA' },
+                        },
+                        logoReveal: {
+                            '0%': { transform: 'scale(1.5)', opacity: '0', textShadow: '0 0 50px #F8F8FF' },
+                            '60%': { transform: 'scale(0.9)', opacity: '1', textShadow: '0 0 10px #F8F8FF' },
+                            '100%': { transform: 'scale(1)', opacity: '1', textShadow: '0 0 5px #F8F8FF' },
+                        },
+                        scoreUpdate: {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.25)', color: '#F778BA' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        slideInFromBottom: {
+                            '0%': { transform: 'translateY(15px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 1s ease-in-out',
+                        slideUp: 'slideUp 0.5s ease-out forwards',
+                        pulseGlow: 'pulseGlow 2.5s infinite ease-in-out',
+                        logoFlicker: 'logoFlicker 3s infinite alternate',
+                        logoReveal: 'logoReveal 2s ease-out forwards',
+                        scoreUpdate: 'scoreUpdate 0.5s ease-in-out',
+                        slideInFromBottom: 'slideInFromBottom 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+<body class="bg-brand-bg text-brand-secondary">
+    <div id="root"></div>
+</body>
+</html>
